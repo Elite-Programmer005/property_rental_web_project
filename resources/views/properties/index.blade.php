@@ -9,7 +9,25 @@
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             @foreach($properties as $property)
                 <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition">
-                    <div class="h-48 bg-gray-300"></div> <!-- Image placeholder -->
+                    <!-- Property Image -->
+                    @php
+                        $primaryImage = $property->images->where('is_primary', true)->first() 
+                            ?? $property->images->first();
+                    @endphp
+                    
+                    @if($primaryImage)
+                        <a href="{{ route('properties.show', $property) }}">
+                            <img src="{{ $primaryImage->thumbnail_url }}" 
+                                 alt="{{ $property->title }}"
+                                 class="h-48 w-full object-cover hover:opacity-90 transition"
+                                 onerror="this.src='https://via.placeholder.com/400x300?text=No+Image'">
+                        </a>
+                    @else
+                        <div class="h-48 bg-gradient-to-br from-gray-300 to-gray-400 flex items-center justify-center">
+                            <i class="fas fa-home text-gray-500 text-4xl"></i>
+                        </div>
+                    @endif
+                    
                     <div class="p-6">
                         <h3 class="text-xl font-bold mb-2">{{ $property->title }}</h3>
                         <p class="text-gray-600 mb-4">{{ Str::limit($property->description, 100) }}</p>

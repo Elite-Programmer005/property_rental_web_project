@@ -7,6 +7,8 @@
     <!-- Tailwind CSS CDN for now (we'll install properly later) -->
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Bootstrap CSS for carousel -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body class="bg-gray-50">
     <!-- Navigation -->
@@ -48,5 +50,8 @@
             <p>&copy; {{ date('Y') }} Property Rental Platform. All rights reserved.</p>
         </div>
     </footer>
+
+    <!-- Bootstrap JS for carousel -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

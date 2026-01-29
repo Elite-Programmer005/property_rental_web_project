@@ -27,6 +27,14 @@
                             </div>
                         </div>
                         
+                        <!-- Admin Actions -->
+                        <div class="mb-6">
+                            <a href="{{ route('properties.create') }}" 
+                               class="bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700 inline-block">
+                                <i class="fas fa-plus-circle mr-2"></i>Add New Property
+                            </a>
+                        </div>
+                        
                         <!-- Admin Stats -->
                         <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
                             <div class="bg-blue-100 p-6 rounded-lg text-center">
@@ -64,12 +72,12 @@
                         
                         <!-- Landlord Actions -->
                         <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
-                            <a href="#" class="bg-white border-2 border-green-300 p-6 rounded-lg text-center hover:bg-green-50 transition">
+                            <a href="{{ route('properties.create') }}" class="bg-white border-2 border-green-300 p-6 rounded-lg text-center hover:bg-green-50 transition">
                                 <i class="fas fa-plus-circle text-green-600 text-3xl mb-3"></i>
                                 <h3 class="text-xl font-bold text-green-800">Add New Property</h3>
                                 <p class="text-gray-600 mt-2">List a new property for rent</p>
                             </a>
-                            <a href="#" class="bg-white border-2 border-blue-300 p-6 rounded-lg text-center hover:bg-blue-50 transition">
+                            <a href="{{ route('properties.my') }}" class="bg-white border-2 border-blue-300 p-6 rounded-lg text-center hover:bg-blue-50 transition">
                                 <i class="fas fa-list text-blue-600 text-3xl mb-3"></i>
                                 <h3 class="text-xl font-bold text-blue-800">My Properties</h3>
                                 <p class="text-gray-600 mt-2">View and manage your listings</p>
@@ -120,6 +128,20 @@
                                     </div>
                                 </div>
                             </div>
+                        </div>
+                        
+                        <!-- Agent Actions -->
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+                            <a href="{{ route('properties.create') }}" class="bg-white border-2 border-indigo-300 p-6 rounded-lg text-center hover:bg-indigo-50 transition">
+                                <i class="fas fa-plus-circle text-indigo-600 text-3xl mb-3"></i>
+                                <h3 class="text-xl font-bold text-indigo-800">Add New Property</h3>
+                                <p class="text-gray-600 mt-2">List a new property for rent</p>
+                            </a>
+                            <a href="{{ route('properties.my') }}" class="bg-white border-2 border-blue-300 p-6 rounded-lg text-center hover:bg-blue-50 transition">
+                                <i class="fas fa-list text-blue-600 text-3xl mb-3"></i>
+                                <h3 class="text-xl font-bold text-blue-800">My Properties</h3>
+                                <p class="text-gray-600 mt-2">View and manage your listings</p>
+                            </a>
                         </div>
                     @endif
                     
